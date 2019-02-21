@@ -1,0 +1,37 @@
+{
+  "name": "web",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "app-root-path": "^2.1.0",
+    "art-template": "^4.12.2",
+    "async-redis": "^1.1.5",
+    "bluebird": "^3.5.1",
+    "body-parser": "^1.17.2",
+    "connect-redis": "^3.3.3",
+    "cookie-parser": "~1.4.3",
+    "crypto": "^1.0.1",
+    "crypto-js": "^3.1.9-1",
+    "debug": "~2.6.3",
+    "express": "~4.15.2",
+    "express-art-template": "^1.0.1",
+    "express-session": "^1.15.6",
+    "log4js": "^2.11.0",
+    "md5": "^2.2.1",
+    "moment": "^2.22.2",
+    "morgan": "^1.8.2",
+    "needle": "^2.2.1",
+    "pagination": "^0.4.5",
+    "multiparty": "^4.2.1",
+    "redis": "^2.8.0",
+    "request-promise": "^4.2.2",
+    "requireindex": "^1.2.0",
+    "sequelize": "^4.38.0",
+    "sequelize-auto": "^0.4.29",
+    "serve-favicon": "~2.4.2",
+    "tedious": "^4.2.0"
+  }
+}

@@ -1,31 +1,45 @@
-let db=require('../db')
-    ,moment=require('moment')
-    ,jieba=require('nodejieba')
+let db = require('../db')
+    , moment = require('moment')
+    , base_config = require('../../config/tsconfig.json')
 ;
 
-module.exports={
-    save_one:async function (param) {
-        let tags=[];
-        if(param.summary){
-            let tag_arr=jieba.extract(param.summary,5);
-            for(var i=0;i<tag_arr.length;i++){
-                let tmp=tag_arr[i];
-                tags.push(tmp.word);
+module.exports = {
+    all: async function (param, res) {
+        var limit = base_config.countPerPage, offset = limit * (param.page - 1);
+
+        var condition = {
+            'limit': limit,
+            'offset': offset,
+            "raw": true,
+            "order": [["id", "desc"]],
+            attributes: ["id", "cate_id", "title", "logo"],
+            where: {
+                st: 1
             }
         }
 
-        let option={
-            cate_id:param.cate_id,
-            title:param.title,
-            tags:tags.join(','),
-            summary:param.summary,
-            logo:param.logo,
-            imglist:param.imglist,
-            createtime:moment()
+        let data = await db.info.findAndCount(condition);
+
+        let result={
+            list:data.rows,
+            count: data.count,
+            current: param.page
         }
 
-        let info=await db.info.create(option);
+        res.render("index", result)
+    },
+    cate_list: function (cate_id) {
 
-        return info;
+    },
+    info_detail: async function (param, res) {
+        let option = {
+            where: {
+                id: param.id
+            },
+            raw: true
+        }
+        let data = await db.info.findOne(option);
+        data.imglist=data.imglist.split(',');
+        res.render("single", data)
     }
 }

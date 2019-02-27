@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var expressSession = require('express-session');
 var redis = require('redis');
-var RedisStore = require('connect-redis')(expressSession);
+//var RedisStore = require('connect-redis')(expressSession);
 
 var router = require('./routes/index');
 

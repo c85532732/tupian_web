@@ -1,3 +1,4 @@
 {
+  "countPerPage": 10,
   "img_root_path":"/site_img/"
 }

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{block 'title'}}{{/block}}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="{{block 'desc'}}{{/block}}"/>
+    <meta name="keywords" content="{{block 'keywords'}}{{/block}}"/>
+    <meta name="author" content="ProBootstrap.com"/>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/open-iconic-bootstrap.min.css">
+
+    <link rel="stylesheet" href="/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/css/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="/css/icomoon.css">
+    <link rel="stylesheet" href="/css/animate.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<aside class="probootstrap-aside js-probootstrap-aside">
+    <a href="#" class="probootstrap-close-menu js-probootstrap-close-menu d-md-none"><span
+            class="oi oi-arrow-left"></span> Close</a>
+    <div class="probootstrap-site-logo probootstrap-animate" data-animate-effect="fadeInLeft">
+
+        <a href="index.html" class="mb-2 d-block probootstrap-logo">Aside</a>
+        <p class="mb-0">Another free html5 bootstrap 4 </p>
+    </div>
+    <div class="probootstrap-overflow">
+        {{include './_modules/menu.html'}}
+        {{include './_modules/footer.html'}}
+    </div>
+</aside>
+{{block 'content'}}{{/block}}
+
+<script src="/js/jquery-3.2.1.slim.min.js"></script>
+<script src="/js/popper.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/owl.carousel.min.js"></script>
+<script src="/js/jquery.waypoints.min.js"></script>
+<script src="/js/imagesloaded.pkgd.min.js"></script>
+<script src="/js/main.js"></script>
+
+{{block 'javascript'}}{{/block}}
+
+</body>
+</html>

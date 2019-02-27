@@ -1,0 +1,13 @@
+{
+  "dialect": "mysql",
+  "host": "127.0.0.1",
+  "database": "tupian",
+  "user": "root",
+  "pass": "root",
+  "port": 3306,
+  "omitNull": true,
+  "additional" : {
+  	"freezeTableName" : true,
+  	"timestamps" : false
+  }
+}
